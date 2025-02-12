@@ -1,0 +1,62 @@
+# Compiled binary and build artifacts
+/target/
+**/target/
+
+# Rust dependency and build files
+Cargo.lock
+Cargo.toml.orig
+
+# Rust tools and IDE-specific files
+.rustup/
+.cargo/
+.vscode/
+.idea/
+*.rs.bk
+
+# macOS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+**/._*
+.Trashes
+.fseventsd
+.spotlight-v100
+
+# Windows-specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux-specific files
+*~ # Backup files
+.nfs*
+
+# Editor swap/backup files
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.orig
+*.rej
+
+# Debugging and profiling files
+*.log
+*.out
+*.profdata
+*.dSYM/
+*.profraw
+
+# Coverage and test files
+coverage/
+tests/**/target/
+tests/**/Cargo.lock
+
+# Ignore binaries produced by `cargo doc`
+/doc/
+
+# Ignore Rustfmt and Clippy cache
+rustfmt.toml.bk
+clippy.toml.bk
