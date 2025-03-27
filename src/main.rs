@@ -21,14 +21,14 @@ async fn main() {
 
     let df_delays = CsvReadOptions::default()
         .with_has_header(true)
-        .try_into_reader_with_file_path(Some("DBTrainrides.csv".into()))
+        .try_into_reader_with_file_path(Some("../DBTrainrides.csv".into()))
         .expect("can read delays csv")
         .finish()
         .expect("can create delays dataframe");
 
     let df_cities = CsvReadOptions::default()
         .with_has_header(true)
-        .try_into_reader_with_file_path(Some("plz_einwohner.csv".into()))
+        .try_into_reader_with_file_path(Some("../plz_einwohner.csv".into()))
         .expect("can read cities csv")
         .finish()
         .expect("can create cities dataframe");
