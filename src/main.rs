@@ -199,30 +199,6 @@ fn df_to_json(df: DataFrame) -> Result<Json<Value>, StatusCode> {
         .map(|v| v.into())
 }
 
-// pub fn df_to_json(df: DataFrame) -> Result<Json<Value>, StatusCode> {
-//     let mut buffer = Vec::new();
-
-//     JsonWriter::new(&mut buffer)
-//         .with_json_format(JsonFormat::Json)
-//         .finish(&mut df.clone())
-//         .map_err(|e| {
-//             error!("Failed to write DataFrame to JSON: {}", e);
-//             StatusCode::INTERNAL_SERVER_ERROR
-//         })?;
-
-//     let json_string = String::from_utf8(buffer).map_err(|e| {
-//         error!("Failed to convert buffer to UTF-8: {}", e);
-//         StatusCode::INTERNAL_SERVER_ERROR
-//     })?;
-
-//     serde_json::from_str(&json_string)
-//         .map_err(|e| {
-//             error!("Failed to parse JSON string: {}", e);
-//             StatusCode::INTERNAL_SERVER_ERROR
-//         })
-//         .map(Json)
-// }
-
 fn cities_zip_to(df_cities: &DataFrame, zip: &str, field: &str) -> Result<DataFrame, StatusCode> {
     df_cities
         .clone()
